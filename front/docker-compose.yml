@@ -1,0 +1,14 @@
+version: "3"
+
+services:
+  front-admissao-uti:
+    build: .
+    # restart: always
+    image: admissao-uti
+    container_name: front-admissao-uti
+    command: >
+      sh -c "quasar c && quasar d -m pwa -p 9090"
+    volumes:
+      - .:/opt/services/front/src
+    ports:
+      - 9090:9090

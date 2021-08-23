@@ -1,0 +1,43 @@
+{
+  // Use IntelliSense to learn about possible attributes.
+  // Passe o mouse para ver as descrições dos atributos existentes.
+  // Para obter mais informações, visite: https://go.microsoft.com/fwlink/?linkid=830387
+  "version": "0.2.0",
+  "configurations": [{
+      "name": "Python: Remote",
+      "type": "python",
+      "request": "attach",
+      // "localRoot": "${workspaceRoot}",
+      // "remoteRoot": "/var/www/django",
+      "port": 3000,
+      "host": "localhost",
+      "pathMappings": [{
+        "localRoot": "${workspaceFolder}",
+        "remoteRoot": "/opt/services/djangoapp/src"
+      }]
+    },
+    {
+      "name": "Python: Django",
+      "type": "python",
+      "request": "launch",
+      "program": "${workspaceFolder}/back/manage.py",
+      "args": ["runserver", "--noreload", "--nothreading"],
+      "debugOptions": ["RedirectOutput", "WaitOnAbnormalExit", "RedirectOutput", "DjangoDebugging", "Django"]
+    },
+    {
+      "name": "Python: All debug Options",
+      "type": "python",
+      "request": "launch",
+      "python": "${command:python.interpreterPath}",
+      "program": "${file}",
+      "module": "module.name",
+      "env": {
+        "VAR1": "1",
+        "VAR2": "2"
+      },
+      "envFile": "${workspaceFolder}/.env",
+      "args": ["arg1", "arg2"],
+      "debugOptions": ["RedirectOutput"]
+    }
+  ]
+}

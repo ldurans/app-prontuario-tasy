@@ -1,0 +1,78 @@
+// app global css in Sass form
+
+*
+  font-family: 'Quicksand', sans-serif
+
+body
+  background-color: rgb(235, 237, 239)
+
+.q-timeline__subtitle
+  padding-right: 16px
+  margin-bottom: 5px
+  font-size: 1.1rem
+
+.q-timeline__dot > .q-icon
+  font-size: 1.8em
+
+.q-timeline__title
+  margin-bottom: 5px
+  font-size: 1.1rem
+
+.bg-padrao
+  // background: linear-gradient(180deg,#f5f5f5,#f1f1f1 50%,#ecebeb 51%,#f7f7f7)!important;
+  background-image: linear-gradient(180deg, #f7f7f7 0, #f1f1f1 20px, #ecebeb 50px, #c1c1c1 40px) !important
+
+.bg-btn-setores
+  // background: linear-gradient(180deg,#f5f5f5,#f1f1f1 50%,#ecebeb 51%,#f7f7f7)!important;
+  background-image: linear-gradient(180deg, #f7f7f7 0, #f1f1f1 28px, #ecebeb 67px, #c1c1c1 121px) !important
+
+.bg-rdsl-blue
+  background: $rdsl-blue
+
+fieldset
+  margin: 8px
+  padding: 5px
+  border: 1px solid $neutral
+
+fieldset legend
+  padding-left: 8px
+  padding-right: 8px
+  font-weight: 500
+  color: $faded
+
+.my-sticky-header-column-table
+  /* height or max-height is important */
+  height: 75vh
+
+  /* specifying max-width so the example can
+   highlight the sticky column on any browser window */
+  max-width: 99vw
+
+  .q-table__bottom, tr:first-child th
+    font-weight: bold
+    font-size: 1em
+    // background-color: #f5f5f5;
+    // background: linear-gradient(180deg,#f5f5f5,#f1f1f1 50%,#ecebeb 51%,#f7f7f7)!important;
+    background-image: linear-gradient(180deg, #f7f7f7 0, #f1f1f1 20px, #ecebeb 50px, #c1c1c1 40px) !important
+
+  tr:first-child th
+    // font-weight: bolder;
+    position: sticky
+    top: 0
+    opacity: 1
+    z-index: 2
+
+  tr:first-child th:last-child
+    z-index: 3
+    opacity: 1
+    border-color: inherit
+
+  td:last-child
+    background-color: #fff
+    z-index: 1
+    opacity: 1
+
+  td:last-child, th:last-child
+    position: sticky
+    right: 0
+    opacity: 1

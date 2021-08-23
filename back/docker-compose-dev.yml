@@ -1,0 +1,67 @@
+version: "3"
+
+services:
+  # database containers, one for each db
+  db-udi-app:
+    image: postgres:11.4
+    # restart: always
+    container_name: "db-udi-app"
+    env_file:
+      - config_envs/db/database1_env
+    volumes:
+      - /home/durans/database/pg_bd_udi:/var/lib/postgresql/pg/data
+    ports:
+      - "5432:5432"
+    networks:
+      - db-udi-app-network
+
+  # APP
+  back-admissao-uti:
+    build: .
+    container_name: back-udi-app
+    # command: 'gunicorn --bind :8000 --chdir clinico clinico.wsgi:application'
+    # restart: always
+    ports:
+      - "9000:9000"
+      - "3000:3000"
+    expose:
+      - "9000"
+      - "3000"
+    # env_file: 
+    #   - .env
+    volumes:
+      - .:/opt/services/djangoapp/src
+      - static:/opt/services/djangoapp/static
+      - media:/opt/services/djangoapp/media
+    networks:
+      - db-udi-app-network
+      - redis_network
+    command: >
+      sh -c "python manage.py runserver 0.0.0.0:9000"
+    depends_on:
+      - db-udi-app
+      - redis-udi-app
+
+  # Redis - queue
+  redis-udi-app:
+    container_name: "redis-udi-app"
+    image: "redis:latest"
+    restart: always
+    ports:
+      - "6379:6379"
+    volumes:
+      - "redisdata-udi-app:/data"
+    networks:
+      - redis_network
+
+networks:
+  db-udi-app-network:
+    driver: bridge
+  redis_network:
+    driver: bridge
+
+volumes:
+  db-udi:
+  redisdata-udi-app:
+  static:
+  media:

@@ -1,0 +1,32 @@
+[
+  {
+    "name": "Round",
+    "icon": "img:statics/icon-round.svg",
+    "routeName": "round",
+    "order": 1
+  },
+  {
+    "name": "Evoluções",
+    "icon": "img:statics/icon-evolucoes.svg",
+    "routeName": "evolucoes",
+    "order": 2
+  },
+  {
+    "name": "Avaliações",
+    "icon": "img:statics/icon-avaliacao.svg",
+    "routeName": "avaliacoes",
+    "order": 3
+  },
+  {
+    "name": "Laudos",
+    "icon": "img:statics/icon-laudo.svg",
+    "routeName": "laudos",
+    "order": 4
+  },
+  {
+    "name": "Prescrições",
+    "icon": "img:statics/icon-prescricao.svg",
+    "routeName": "prescricoes",
+    "order": 5
+  }
+]

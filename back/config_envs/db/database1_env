@@ -1,0 +1,5 @@
+POSTGRES_DB=prontuario-web-app
+POSTGRES_PORT=5432
+POSTGRES_USER=postgres
+POSTGRES_PASSWORD=senha
+# DATABASE_URL=postgres://user:password@hostname:5433/dbname

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport"
+    content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible"
+    content="ie=edge">
+  <title>Document</title>
+</head>
+<style>
+  body {
+    background: rgb(204, 204, 204);
+  }
+
+  page {
+    background: white;
+    display: block;
+    margin: 0 auto;
+    margin-bottom: 0.5cm;
+    box-shadow: 0 0 0.5cm rgba(0, 0, 0, 0.5);
+  }
+
+  page[size="A4"] {
+    width: 21cm;
+    height: 29.7cm;
+  }
+
+  .grid {
+    display: grid;
+  }
+
+  .grid-template-columns {
+    grid-template-columns: 1fr 2fr;
+  }
+
+  /* Estilos Gerais */
+  .item {
+    margin: 5px;
+    background: tomato;
+    text-align: center;
+    font-size: 1.5em;
+  }
+
+  .textCabecalho {
+    text-align: center;
+    font-size: 2em;
+    font-weight: bolder;
+    margin-bottom: 0.5em;
+    margin-top: 0.5em;
+  }
+</style>
+
+<body>
+  <page size="A4">
+    <section class="grid grid-template-columns"
+      style="padding-top: 40px;">
+      <div>
+        <img width="250"
+          height="90"
+          src="https://www.w3schools.com/images/w3schools_green.jpg"
+          alt="UDI Hospital">
+      </div>
+      <div style="align-self: center;">
+        <p class="textCabecalho"> PLANO TERAPÊUTICO </p>
+      </div>
+    </section>
+    <hr>
+    </div>
+
+  </page>
+</body>
+
+</html>
